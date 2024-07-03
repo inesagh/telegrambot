@@ -1,10 +1,11 @@
 # TelegramBot
 
-TelegramBot is a Telegram bot built using Spring Boot that integrates with OpenAI's ChatGPT to provide intelligent conversation capabilities. It supports commands for interacting with ChatGPT and managing chat history.
+It's a Telegram bot built using Spring Boot that integrates with OpenAI's ChatGPT to provide intelligent conversation capabilities. It supports commands for interacting with ChatGPT and managing chat history.
 
 ## Prerequisites
 - Java 11 or higher
 - Maven
+- Docker
 - Telegram account to create a bot via BotFather
 - OpenAI API key
 
@@ -36,7 +37,21 @@ openai.gpt.key=<your_openai_key>
 ```
 Replace your_bot_name, your_bot_token, and the OpenAI API URL with your actual bot name, bot token, and the OpenAI endpoint.
 
-### 5. Build and Run the Project
+### 5. Build the Project
+```bash
+mvn clean install
+```
+
+### 6. Build the Docker Image from the **root** directory:
+```bash
+docker build -t bot-image .
+```
+
+### 7. Run the Docker Container:
+```bash
+docker run -d --name bot-container -p 8080:8080 bot-image
+```
+
 
 ### 6. Interact with Your Bot /Bot Commands/
 - Open Telegram and search for your bot by its name.

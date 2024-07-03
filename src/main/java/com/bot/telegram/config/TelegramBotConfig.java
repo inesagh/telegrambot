@@ -25,7 +25,7 @@ public class TelegramBotConfig {
     private Bot bot;
 
     @Bean
-    public Bot asdBot() {
+    public Bot bot() {
         bot = new Bot(name, token, model, url);
         return bot;
     }
